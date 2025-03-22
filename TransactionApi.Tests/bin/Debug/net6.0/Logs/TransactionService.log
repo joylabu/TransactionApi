@@ -1,0 +1,1190 @@
+2025-03-22 23:03:15,562 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : INCORRECT PartnerPassword
+2025-03-22 23:03:15,575 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "XXRkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:15.5669990Z",
+  "Sig": "2871wL9QnjygfH0ejjGbFmp2SMmfTVO5MDTxW8Q+j0Q="
+}
+2025-03-22 23:03:15,585 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,585 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,585 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,585 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,585 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,586 [17] ERROR TransactionApi.Services.TransactionService - FormatException occurred during transaction validation.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at TransactionApi.Services.TransactionService.ValidateAndProcessTransaction(TransactionRequest request) in C:\Users\CMA SOLUTIONS\Downloads\Fortitude.Asia_Test\TransactionApi\TransactionApi\Services\TransactionService.cs:line 115
+2025-03-22 23:03:15,597 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Base-64 string format."
+}
+2025-03-22 23:03:15,597 [17] WARN TransactionApi.Services.TransactionService - Signature validation failed for PartnerRefNo FG-00001.
+2025-03-22 23:03:15,598 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:03:15,598 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:03:15,605 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : INVALID TOTAL AMOUNT
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 90000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:15.6050857Z",
+  "Sig": "RNY08Y+Qh7ENB8hDtqx7LLMfTAkg+xEInm8cWcJ+0Cg="
+}
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,606 [17] WARN TransactionApi.Services.TransactionService - Invalied Total Amount for PartnerRefNo FG-00001.
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:03:15,606 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:03:15,608 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: NORMAL Success Example
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:15.6081200Z",
+  "Sig": "wucAlsY+e2pl8KwP3S3ta6iHhPg48B7lCV+MKLqA3sA="
+}
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,609 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:15,616 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 2 - Base Discount 15%, Conditional Discount 10%, Cap at 20%
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 120500,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Vacuum",
+      "Qty": 5,
+      "UnitPrice": 24100
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:15.6169179Z",
+  "Sig": "jn7lk+i0j7B4nf3Lvl5BQbfm87v74UYwc+fj+bTv8Tw="
+}
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,618 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:15,621 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 1 - Base Discount 10%, No Conditional Discount
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Notebook",
+      "Qty": 5,
+      "UnitPrice": 20000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:15.6214163Z",
+  "Sig": "wucAlsY+e2pl8KwP3S3ta6iHhPg48B7lCV+MKLqA3sA="
+}
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,622 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : EXPIRED TIMESTAMP
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2024-03-22T07:30:43.7900257Z",
+  "Sig": "PIk5t0B51nZgptLJcSO+Nx6QfApFR7zRnQjwrMVNhkA="
+}
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:15,624 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:15,625 [17] WARN TransactionApi.Services.TransactionService - Timestamp expired: Request time 3/22/2024 7:30:43 AM, Server time 3/22/2025 3:03:15 PM
+2025-03-22 23:03:15,625 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:03:15,625 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:03:49,950 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INCORRECT PartnerPassword
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "XXRkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:49.9548945Z",
+  "Sig": "KGJOP8UewwpHLCtxO5pH46aPKheNdfwCbXQQNcXNdA0="
+}
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,963 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,963 [20] ERROR TransactionApi.Services.TransactionService - FormatException occurred during transaction validation.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at TransactionApi.Services.TransactionService.ValidateAndProcessTransaction(TransactionRequest request) in C:\Users\CMA SOLUTIONS\Downloads\Fortitude.Asia_Test\TransactionApi\TransactionApi\Services\TransactionService.cs:line 115
+2025-03-22 23:03:49,969 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Base-64 string format."
+}
+2025-03-22 23:03:49,970 [20] WARN TransactionApi.Services.TransactionService - Signature validation failed for PartnerRefNo FG-00001.
+2025-03-22 23:03:49,970 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:03:49,970 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:03:49,976 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INVALID TOTAL AMOUNT
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 90000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:49.9769218Z",
+  "Sig": "xghMCB2lVLsowtMqb2TB30JVgYp8rX6xXbigKS4Qj8A="
+}
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,978 [20] WARN TransactionApi.Services.TransactionService - Invalied Total Amount for PartnerRefNo FG-00001.
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:03:49,978 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:03:49,980 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: NORMAL Success Example
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:49.9801535Z",
+  "Sig": "zD/ANTiI1eK4DxhBcOmVpPZUE6PK7FQ27gYdf0ih5ag="
+}
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,981 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:49,987 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 2 - Base Discount 15%, Conditional Discount 10%, Cap at 20%
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 120500,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Vacuum",
+      "Qty": 5,
+      "UnitPrice": 24100
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:49.9875792Z",
+  "Sig": "Rh2OPdPi25+7Cy3zETuIi0eT4r3raM1N3PQOpOFtKtM="
+}
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,988 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:49,991 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 1 - Base Discount 10%, No Conditional Discount
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Notebook",
+      "Qty": 5,
+      "UnitPrice": 20000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:03:49.9919155Z",
+  "Sig": "zD/ANTiI1eK4DxhBcOmVpPZUE6PK7FQ27gYdf0ih5ag="
+}
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,993 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : EXPIRED TIMESTAMP
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2024-03-22T07:30:43.7900257Z",
+  "Sig": "PIk5t0B51nZgptLJcSO+Nx6QfApFR7zRnQjwrMVNhkA="
+}
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:03:49,994 [20] WARN TransactionApi.Services.TransactionService - Timestamp expired: Request time 3/22/2024 7:30:43 AM, Server time 3/22/2025 3:03:49 PM
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:03:49,994 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:05:44,994 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INCORRECT PartnerPassword
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "XXRkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:05:44.9991344Z",
+  "Sig": "gS2BAW2UQc3gardHddiqYA6FGduaMhqjBHlSh3sZCwY="
+}
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,007 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,007 [20] ERROR TransactionApi.Services.TransactionService - FormatException occurred during transaction validation.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at TransactionApi.Services.TransactionService.ValidateAndProcessTransaction(TransactionRequest request) in C:\Users\CMA SOLUTIONS\Downloads\Fortitude.Asia_Test\TransactionApi\TransactionApi\Services\TransactionService.cs:line 115
+2025-03-22 23:05:45,022 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Base-64 string format."
+}
+2025-03-22 23:05:45,022 [20] WARN TransactionApi.Services.TransactionService - Signature validation failed for PartnerRefNo FG-00001.
+2025-03-22 23:05:45,023 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:05:45,023 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:05:45,030 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INVALID TOTAL AMOUNT
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 90000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:05:45.0304412Z",
+  "Sig": "5fVnOHR1qzDhBDdwgubdIUxXxq3z4RADuxFL6v+QXyk="
+}
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,031 [20] WARN TransactionApi.Services.TransactionService - Invalied Total Amount for PartnerRefNo FG-00001.
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:05:45,031 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:05:45,038 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: NORMAL Success Example
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:05:45.0388564Z",
+  "Sig": "XFuwgy1t6zkC+XqclsNJmtwsvOGWrR7Y/Nhrui0s4Zs="
+}
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,039 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,040 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,040 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:05:45,042 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 2 - Base Discount 15%, Conditional Discount 10%, Cap at 20%
+2025-03-22 23:05:45,043 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 120500,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Vacuum",
+      "Qty": 5,
+      "UnitPrice": 24100
+    }
+  ],
+  "Timestamp": "2025-03-22T15:05:45.0429671Z",
+  "Sig": "or3pgshR26HWo4xUQ66yYRhXGS0n8T1XDJBlF6atgVw="
+}
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,044 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:05:45,047 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 1 - Base Discount 10%, No Conditional Discount
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Notebook",
+      "Qty": 5,
+      "UnitPrice": 20000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:05:45.0475608Z",
+  "Sig": "XFuwgy1t6zkC+XqclsNJmtwsvOGWrR7Y/Nhrui0s4Zs="
+}
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,048 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:05:45,050 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : EXPIRED TIMESTAMP
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2024-03-22T07:30:43.7900257Z",
+  "Sig": "PIk5t0B51nZgptLJcSO+Nx6QfApFR7zRnQjwrMVNhkA="
+}
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:05:45,051 [20] WARN TransactionApi.Services.TransactionService - Timestamp expired: Request time 3/22/2024 7:30:43 AM, Server time 3/22/2025 3:05:45 PM
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:05:45,051 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:06:47,552 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INCORRECT PartnerPassword
+2025-03-22 23:06:47,564 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "XXRkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:06:47.5570003Z",
+  "Sig": "HGYDTANQgVk73T2BhouJHJYhOG2lTfC8+y2x99gw1nw="
+}
+2025-03-22 23:06:47,565 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,565 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,565 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,565 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,565 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,565 [20] ERROR TransactionApi.Services.TransactionService - FormatException occurred during transaction validation.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at TransactionApi.Services.TransactionService.ValidateAndProcessTransaction(TransactionRequest request) in C:\Users\CMA SOLUTIONS\Downloads\Fortitude.Asia_Test\TransactionApi\TransactionApi\Services\TransactionService.cs:line 115
+2025-03-22 23:06:47,572 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Base-64 string format."
+}
+2025-03-22 23:06:47,572 [20] WARN TransactionApi.Services.TransactionService - Signature validation failed for PartnerRefNo FG-00001.
+2025-03-22 23:06:47,572 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:06:47,572 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:06:47,578 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : INVALID TOTAL AMOUNT
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 90000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:06:47.5789958Z",
+  "Sig": "LwmGmD6Hl5SxjAk4HzNOuQMCEg16mRlsT5FtXl8Yr0A="
+}
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,580 [20] WARN TransactionApi.Services.TransactionService - Invalied Total Amount for PartnerRefNo FG-00001.
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:06:47,580 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:06:47,582 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: NORMAL Success Example
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:06:47.5820544Z",
+  "Sig": "pEAIsaVjvFqZHIeCZ5PTrWdAwLU7dnOu0ySDyq4e1GI="
+}
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,583 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:06:47,589 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 2 - Base Discount 15%, Conditional Discount 10%, Cap at 20%
+2025-03-22 23:06:47,590 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 120500,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Vacuum",
+      "Qty": 5,
+      "UnitPrice": 24100
+    }
+  ],
+  "Timestamp": "2025-03-22T15:06:47.5899123Z",
+  "Sig": "Xj6RZPWjqbOvrhwKU8AvdU8stEzb9LRfPSb8kXTdNug="
+}
+2025-03-22 23:06:47,590 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,591 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:06:47,594 [20] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 1 - Base Discount 10%, No Conditional Discount
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Notebook",
+      "Qty": 5,
+      "UnitPrice": 20000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:06:47.5942693Z",
+  "Sig": "pEAIsaVjvFqZHIeCZ5PTrWdAwLU7dnOu0ySDyq4e1GI="
+}
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,595 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:06:47,596 [20] INFO TransactionApi.Services.TransactionService - TEST CASE : EXPIRED TIMESTAMP
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2024-03-22T07:30:43.7900257Z",
+  "Sig": "PIk5t0B51nZgptLJcSO+Nx6QfApFR7zRnQjwrMVNhkA="
+}
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:06:47,597 [20] WARN TransactionApi.Services.TransactionService - Timestamp expired: Request time 3/22/2024 7:30:43 AM, Server time 3/22/2025 3:06:47 PM
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:06:47,597 [20] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:14:09,290 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 2 - Base Discount 15%, Conditional Discount 10%, Cap at 20%
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 120500,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Vacuum",
+      "Qty": 5,
+      "UnitPrice": 24100
+    }
+  ],
+  "Timestamp": "2025-03-22T15:14:09.2954441Z",
+  "Sig": "QUF+sHreFg5ULtZ5FDNq0z6EjBQ2KDD5bZ8E3fU32Ak="
+}
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,303 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,305 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:14:09,311 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : INCORRECT PartnerPassword
+2025-03-22 23:14:09,312 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "XXRkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:14:09.3114674Z",
+  "Sig": "3j6iJVu5OpJlSgYp/g61gmphy/ZVmxCP6dqFcVY5sNM="
+}
+2025-03-22 23:14:09,313 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,313 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,313 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,313 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,313 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,313 [17] ERROR TransactionApi.Services.TransactionService - FormatException occurred during transaction validation.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at TransactionApi.Services.TransactionService.ValidateAndProcessTransaction(TransactionRequest request) in C:\Users\CMA SOLUTIONS\Downloads\Fortitude.Asia_Test\TransactionApi\TransactionApi\Services\TransactionService.cs:line 115
+2025-03-22 23:14:09,325 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Base-64 string format."
+}
+2025-03-22 23:14:09,325 [17] WARN TransactionApi.Services.TransactionService - Signature validation failed for PartnerRefNo FG-00001.
+2025-03-22 23:14:09,325 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:14:09,325 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Access Denied!"
+}
+2025-03-22 23:14:09,329 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : INVALID TOTAL AMOUNT
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 90000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:14:09.3297045Z",
+  "Sig": "p9/MPSFyBxJ1TFo61Dv18A8CtsGb9QtvBwQT1PSJigE="
+}
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,330 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,331 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,331 [17] WARN TransactionApi.Services.TransactionService - Invalied Total Amount for PartnerRefNo FG-00001.
+2025-03-22 23:14:09,331 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:14:09,331 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Invalid Total Amount."
+}
+2025-03-22 23:14:09,339 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: NORMAL Success Example
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:14:09.3398975Z",
+  "Sig": "PElzhlvNOs2S0gREmAjWV5S3Ixn39WYImF5NpYP11QI="
+}
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,341 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - TEST CASE : EXPIRED TIMESTAMP
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Pen",
+      "Qty": 4,
+      "UnitPrice": 20000
+    },
+    {
+      "PartnerItemRef": "i-00002",
+      "Name": "Ruler",
+      "Qty": 2,
+      "UnitPrice": 10000
+    }
+  ],
+  "Timestamp": "2024-03-22T07:30:43.7900257Z",
+  "Sig": "PIk5t0B51nZgptLJcSO+Nx6QfApFR7zRnQjwrMVNhkA="
+}
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,342 [17] WARN TransactionApi.Services.TransactionService - Timestamp expired: Request time 3/22/2024 7:30:43 AM, Server time 3/22/2025 3:14:09 PM
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:14:09,342 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": "Timestamp Expired"
+}
+2025-03-22 23:14:09,344 [17] INFO TransactionApi.Services.TransactionService - TEST CASE: Scenario 1 - Base Discount 10%, No Conditional Discount
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Request :{
+  "PartnerKey": "FAKEGOOGLE",
+  "PartnerRefNo": "FG-00001",
+  "PartnerPassword": "RkFLRVBBU1NXT1JEMTIzNA==",
+  "TotalAmount": 100000,
+  "Items": [
+    {
+      "PartnerItemRef": "i-00001",
+      "Name": "Notebook",
+      "Qty": 5,
+      "UnitPrice": 20000
+    }
+  ],
+  "Timestamp": "2025-03-22T15:14:09.3445261Z",
+  "Sig": "PElzhlvNOs2S0gREmAjWV5S3Ixn39WYImF5NpYP11QI="
+}
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Starting transaction validation.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Timestamp validated successfully.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Sig validated successfully.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Signature validated successfully.
+2025-03-22 23:14:09,345 [17] INFO TransactionApi.Services.TransactionService - Response :{
+  "Result": 0,
+  "TotalAmount": null,
+  "TotalDiscount": null,
+  "FinalAmount": null,
+  "ResultMessage": null
+}
